@@ -1,0 +1,41 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+
+
+}
+
+
+.banner-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-img--left {
+  z-index: 1;
+}
+
+.banner-img--right {
+  z-index: 2;
+  /* diagonal soft-edge mask: transparent on the left, solid on the right */
+  -webkit-mask-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent calc(50% - 60px),
+    black calc(50% + 60px),
+    black 100%
+  );
+  mask-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent calc(50% - 60px),
+    black calc(50% + 60px),
+    black 100%
+  );
+}
+

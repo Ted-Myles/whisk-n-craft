@@ -1,0 +1,162 @@
+.slider {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 30px auto;
+  padding: 18px;
+
+  box-sizing: border-box;
+}
+
+/* Decorative outer frame */
+.slider-frame {
+  position: relative;
+
+  width: 100%;
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: #fff8ed;
+
+  border: 3px solid #e7a33e;
+
+  box-shadow:
+    0 15px 40px rgba(91, 48, 20, 0.18),
+    inset 0 0 0 6px #fff8ed,
+    inset 0 0 0 8px #f2c16b;
+
+  transition: transform 0.3s ease;
+}
+
+/* Decorative inner border */
+.slider-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 19px;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* Image */
+.slider-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    opacity 0.8s ease,
+    transform 5s ease;
+
+  animation: sliderZoom 5s ease-in-out;
+}
+
+/* Gentle zoom effect */
+@keyframes sliderZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Dots */
+.slider-dots {
+  position: absolute;
+
+  bottom: 35px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.slider-dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.slider-dot.active {
+  width: 28px;
+
+  border-radius: 10px;
+
+  background: #e85d24;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .slider {
+    padding: 12px;
+  }
+
+  .slider-frame {
+    height: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .slider {
+    padding: 8px;
+    margin: 15px auto;
+  }
+
+  .slider-frame {
+    height: 280px;
+
+    border-radius: 20px;
+
+    border-width: 2px;
+
+    box-shadow:
+      0 10px 25px rgba(91, 48, 20, 0.15),
+      inset 0 0 0 4px #fff8ed,
+      inset 0 0 0 6px #f2c16b;
+  }
+
+  .slider-frame::before {
+    inset: 8px;
+    border-radius: 14px;
+  }
+
+  .slider-dots {
+    bottom: 20px;
+  }
+}

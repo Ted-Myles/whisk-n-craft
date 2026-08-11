@@ -1,0 +1,18 @@
+.browse-categories{
+    display: flex;
+    justify-self: center;
+    
+    width: fit-content;
+    height: 100px;
+    
+    padding: 50px;
+    
+}
+
+.entry-title{
+    display: flex;
+    flex-direction: column;
+   font-family: RW Chancery L, cursive;
+   font-size: 150%;
+   color: rgba(137, 30, 18, 0.9);
+}
