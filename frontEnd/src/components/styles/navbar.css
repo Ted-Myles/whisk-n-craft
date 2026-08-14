@@ -1,37 +1,41 @@
 .navbar-container {
-  
+
   display: flex;
   flex-direction: row-reverse;
 
- 
-  
+  position: fixed;
+  /* Fixes it to the viewport */
+  top: 0;
+  z-index: 11;
+
+
   width: 100%;
   height: 85px;
-  background-color: #961c1cfa; 
-  
+  background-color: #961c1cfa;
+
 }
 
 
-   
 
-.btn{
-    display: flex;
-    justify-content: center;
-    margin: 0.5%;
-    width: 10%;
-    height: 50%;
-    font-family: Apple Chancery, cursive;
-    color: #fbf8fcfe;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 0.5%;
+  width: 10%;
+  height: 50%;
+  font-family: Apple Chancery, cursive;
+
 
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+
   padding: 0.5em 1.5em;
   color: #fff;
   cursor: pointer;
   transition: 0.1s;
-    
+
 }
 
 
@@ -39,6 +43,9 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  color: #4ff54f96;
+
 }
 
+.span {
+  color: #fcc54fdb;
+}

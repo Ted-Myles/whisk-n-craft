@@ -1,0 +1,12 @@
+.categories-icons{
+    display: flex;
+    align-items: center;
+width: 50%;
+height: 10%;
+background-color: rgba(243, 202, 180, 0.594);
+border-radius: 10px;
+margin: 0.5%;
+}
+.btn{
+    color: brown;
+}
