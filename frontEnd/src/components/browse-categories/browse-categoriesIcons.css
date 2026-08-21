@@ -29,7 +29,7 @@ margin: 0.01%;
 }
 
 .cat-icons{
-    height: 45%;
+    height: 30%;
     width: 8%;
     
 }
@@ -38,10 +38,11 @@ margin: 0.01%;
 }
 
 .bake2{
-  width: 50px;
-  height: 60px;
+  width: 40px;
+  height: 50px;
   object-fit: contain;
   color: #4ff54f96;
   background-color: #ece4c4;
   border-radius: 75%;
+   box-shadow: 2px 4px 10px rgba(250, 116, 79, 0.678);
 }

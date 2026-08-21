@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@angular/core": "^22.1.0",
+    "axios": "^1.19.0",
+    "env": "^0.0.2",
     "lucide-react": "^1.29.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

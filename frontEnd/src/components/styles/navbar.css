@@ -8,9 +8,10 @@
   z-index: 3; 
   
   
-  width: 98.9%;
+  width: 98.7%;
   height: 85px;
   background-color: #961c1cfa; 
+  box-shadow: 4px 6px 12px rgba(180, 66, 34, 0.477);
   
 }
 
@@ -20,7 +21,7 @@
     display: flex;
     justify-content: center;
     margin: 0.5%;
-    width: 5%;
+    width: 7%;
     height: 50%;
     font-family: Apple Chancery, cursive;
     color: #fbf8fcfe;
@@ -46,4 +47,5 @@
 
 .span{
   color: rgb(255, 194, 62);
+  font-size: 87%;
 }

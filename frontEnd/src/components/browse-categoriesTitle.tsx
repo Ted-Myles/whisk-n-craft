@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import "../components/browse-categories/browse-categoriesTitle.css";
-import breadIcon from "../assets/icons/bake1.png";
+import breadIcon from "../assets/icons/bake3.png";
 
 const BrowseCategories = (): ReactElement => {
   return (

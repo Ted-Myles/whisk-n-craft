@@ -1,0 +1,144 @@
+:root {
+    --bp-cream: #fbf3e7;
+    --bp-crust: #3b2a1e;
+    --bp-amber: #c97a2b;
+    --bp-berry: #a23b4e;
+    --bp-white: #ffffff;
+    --bp-muted: #8b7355;
+    --bp-border: #eadfc8;
+
+    /* System-font fallbacks — no external font request required.
+       If you'd like the original Fraunces/Work Sans pairing, add this to
+       your index.html <head> instead of an in-CSS @import (faster, and
+       doesn't block if a network hiccup happens):
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+       Then swap the two variables below for 'Fraunces', serif and
+       'Work Sans', sans-serif. */
+    --bp-font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+    --bp-font-body: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* light, low-saturation fill for the tab — distinct from the card/page
+       background so it reads as a separate label, same idea as the reference */
+    --bp-tab-bg: #f3e9d8;
+}
+
+.bp-featured {
+    position: relative;
+    max-width: 100%;
+    margin: 4.25rem auto 1.5rem;
+    padding: clamp(0.5rem, 3vw, 2.25rem) clamp(1rem, 3vw, 1.75rem) 1.5rem;
+    background: #EFDECD ;
+    border: 1px solid var(--bp-border);
+    height: 280px;
+
+}
+
+/* echoes the reference: a light label box sitting above the container's
+   top-left corner, its bottom edge touching the border, icon + bold title */
+.bp-featured__tab {
+    position: absolute;
+    top: 0;
+    left: clamp(1rem, 3vw, 1.75rem);
+    transform: translateY(-90%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bp-tab-bg);
+    color: var(--bp-crust);
+    font-family: var(--bp-font-body);
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--bp-border);
+
+    box-shadow: 0 1px 3px rgba(59, 42, 30, 0.08);
+}
+
+.bp-featured__tab-icon {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.bp-featured__row {
+    display: flex;
+    gap: clamp(0.6rem, 2vw, 1rem);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 0.5rem 0 1.25rem;
+    margin-top: 0.75rem;
+
+    /* thin, unobtrusive scrollbar instead of the default chunky one */
+    scrollbar-width: thin;
+    scrollbar-color: var(--bp-amber) transparent;
+}
+
+.bp-featured__row::-webkit-scrollbar {
+    height: 6px;
+}
+.bp-featured__row::-webkit-scrollbar-thumb {
+    background: var(--bp-amber);
+    border-radius: 999px;
+}
+
+.bp-featured__skeleton {
+    flex: 0 0 auto;
+    width: clamp(150px, 40vw, 210px);
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--bp-border) 25%, #f5ecd9 37%, var(--bp-border) 63%);
+    background-size: 400% 100%;
+    animation: bp-shimmer 1.4s ease infinite;
+}
+
+@keyframes bp-shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+
+.bp-featured__message {
+    font-family: var(--bp-font-body);
+    color: var(--bp-muted);
+    font-size: 0.9rem;
+    padding: 1rem 0;
+}
+
+.bp-featured__more {
+    display: inline-block;
+    float: right;
+    font-family: var(--bp-font-body);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--bp-white);
+    background: var(--bp-berry);
+    text-decoration: none;
+    padding: 0.5rem 1.4rem;
+    border-radius: 999px;
+    transition: filter 0.15s ease;
+}
+
+.bp-featured__more:hover,
+.bp-featured__more:focus-visible {
+    filter: brightness(1.08);
+}
+
+.bp-featured__more:focus-visible {
+    outline: 2px solid var(--bp-crust);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bp-featured__skeleton {
+        animation: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .bp-featured__more {
+        float: none;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+    }
+}

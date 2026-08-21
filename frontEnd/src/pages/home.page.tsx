@@ -5,6 +5,7 @@ import Header from "../components/header";
 import "../pages/styles/homepage.css";
 import Banner from "../components/banner";
 import BrowseCategoriesIcons from "../components/browse-categoriesIcons";
+import FeaturedRecipes from "../components/featuredContainer";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
         <Banner />
         <BrowseCategories />
         <BrowseCategoriesIcons />
+        <FeaturedRecipes />
 
       </div>
     </div>
