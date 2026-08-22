@@ -13,10 +13,10 @@ const HomePage = () => {
       <Header />
       <div className="homepage-body">
         <Banner />
-        <BrowseCategories />
-        <BrowseCategoriesIcons />
-        <FeaturedRecipes />
 
+        <FeaturedRecipes />
+          <BrowseCategories />
+          <BrowseCategoriesIcons />
       </div>
     </div>
   );

@@ -12,6 +12,7 @@ export async function list(req, res, next) {
     } catch (err) { next(err); }
 }
 
+
 export async function search(req, res, next) {
     try {
         const { q, categoryId, nationalityId } = req.query;

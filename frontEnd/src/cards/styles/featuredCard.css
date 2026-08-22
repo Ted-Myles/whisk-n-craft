@@ -1,7 +1,7 @@
 .bp-card {
     flex: 0 0 auto;
-    width: clamp(150px, 40vw, 220px);
-    height: 250px;
+    width: clamp(130px, 15vw, 220px);
+    height: 270px;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,8 @@
 
 .bp-card__image-wrap {
     position: relative;
+    height: 70%;
+    width: 100%;
     aspect-ratio: 4 / 3;
     background: var(--bp-cream);
 }

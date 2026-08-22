@@ -26,11 +26,12 @@
 .bp-featured {
     position: relative;
     max-width: 100%;
-    margin: 4.25rem auto 1.5rem;
+    margin: 6.25rem auto 1.5rem;
     padding: clamp(0.5rem, 3vw, 2.25rem) clamp(1rem, 3vw, 1.75rem) 1.5rem;
-    background: #EFDECD ;
+    background: #ffffff;
     border: 1px solid var(--bp-border);
     height: 280px;
+    box-shadow: #8b7355;
 
 }
 
@@ -67,7 +68,7 @@
     overflow-x: auto;
     scroll-snap-type: x proximity;
     padding: 0.5rem 0 1.25rem;
-    margin-top: 0.75rem;
+    margin-top: 0.10rem;
 
     /* thin, unobtrusive scrollbar instead of the default chunky one */
     scrollbar-width: thin;
@@ -141,4 +142,11 @@
         width: fit-content;
         margin-left: auto;
     }
+}
+
+.bread-gif{
+    height: 35px;
+    width: 35px;
+    margin: 3px;
+
 }

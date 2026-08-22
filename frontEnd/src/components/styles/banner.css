@@ -8,7 +8,11 @@
 
 
 }
-
+@media (max-width: 480px) {
+.banner{
+    height: 100px;
+}
+}
 
 .banner-img {
   position: absolute;

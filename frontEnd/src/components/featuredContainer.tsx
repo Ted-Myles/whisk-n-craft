@@ -1,6 +1,7 @@
 import RecipeCard from '../cards/Featured.Recipes.Card';
 import { useFeaturedRecipes } from '../utils/store/useFeaturedRecipes';
 import './styles/featured.css';
+import cake from "../assets/icons/bake3.png"
 
 interface FeaturedRecipesProps {
     viewAllHref?: string;
@@ -12,7 +13,7 @@ export default function FeaturedRecipes({ viewAllHref = '/recipes' }: FeaturedRe
     return (
         <section className="bp-featured">
             <span className="bp-featured__tab">
-                <span className="bp-featured__tab-icon" aria-hidden="true">🥄</span>
+                <span className="bp-featured__tab-icon" aria-hidden="true"> <img src={cake} alt="Home" className="bread-gif" /></span>
                 Featured Recipes
             </span>
 

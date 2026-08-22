@@ -13,7 +13,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
         nationality,
         thumbnail: imageUrl
     } = recipe;
-    console.log("IMAGE URL:", imageUrl);
+
     return (
         <a className="bp-card" href={`/recipes/${id}`}>
             <div className="bp-card__image-wrap">
