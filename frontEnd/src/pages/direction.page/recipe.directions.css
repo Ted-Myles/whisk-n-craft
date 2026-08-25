@@ -1,0 +1,414 @@
+:root {
+    --bp-cream: #fbf3e7;
+    --bp-crust: #3b2a1e;
+    --bp-amber: #c97a2b;
+    --bp-berry: #a23b4e;
+    --bp-white: #ffffff;
+    --bp-muted: #8b7355;
+    --bp-border: #eadfc8;
+    --bp-tip-bg: #f3e9d8;
+
+    --bp-font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+    --bp-font-body: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.bp-recipe {
+    max-width: 1100px;
+    /*margin: 0 auto;*/
+    padding: clamp(1rem, 3vw, 2rem);
+    font-family: var(--bp-font-body);
+    color: var(--bp-crust);
+    margin-top: 100px;
+}
+
+/* ============================================================ */
+/* Hero                                                           */
+/* ============================================================ */
+.bp-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: start;
+}
+
+.bp-hero__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.bp-hero__main-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    /*border-radius: 14px;*/
+    display: block;
+}
+
+.bp-hero__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /*border-radius: 14px;*/
+    background: var(--bp-tip-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.bp-hero__thumbs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.bp-hero__thumb {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: none;
+}
+
+.bp-hero__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bp-hero__thumb.is-active {
+    border-color: var(--bp-amber);
+}
+
+.bp-hero__thumb:focus-visible {
+    outline: 2px solid var(--bp-berry);
+    outline-offset: 2px;
+}
+
+.bp-hero__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.bp-hero__title {
+    margin: 0;
+    font-family: var(--bp-font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--bp-crust);
+}
+
+.bp-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.bp-rating__stars span {
+    color: var(--bp-border);
+    font-size: 1rem;
+}
+
+.bp-rating__stars span.is-filled {
+    color: var(--bp-amber);
+}
+
+.bp-rating__count {
+    font-size: 0.85rem;
+    color: var(--bp-muted);
+}
+
+.bp-hero__description {
+    margin: 0.2rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--bp-muted);
+}
+
+/* ---- meta row (prep / bake / servings) ---- */
+.bp-meta {
+    display: flex;
+    gap: clamp(1rem, 3vw, 1.75rem);
+    padding: 0.9rem 0;
+    margin-top: 0.3rem;
+    border-top: 1px solid var(--bp-border);
+    border-bottom: 1px solid var(--bp-border);
+    flex-wrap: wrap;
+}
+
+.bp-meta__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    text-align: center;
+    min-width: 72px;
+}
+
+.bp-meta__icon {
+    font-size: 1.1rem;
+}
+
+.bp-meta__label {
+    font-size: 0.7rem;
+    color: var(--bp-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.bp-meta__value {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ---- actions ---- */
+.bp-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+}
+
+.bp-actions__save,
+.bp-actions__share {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--bp-font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: filter 0.15s ease, background 0.15s ease;
+}
+
+.bp-actions__save {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-berry);
+    color: var(--bp-berry);
+}
+
+.bp-actions__save.is-saved {
+    background: var(--bp-berry);
+    color: var(--bp-white);
+}
+
+.bp-actions__share {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    color: var(--bp-crust);
+}
+
+.bp-actions__save:hover,
+.bp-actions__share:hover {
+    filter: brightness(0.97);
+}
+
+.bp-actions__save:focus-visible,
+.bp-actions__share:focus-visible {
+    outline: 2px solid var(--bp-crust);
+    outline-offset: 2px;
+}
+
+/* ============================================================ */
+/* Content grid: directions (main) + ingredients/tip (sidebar)    */
+/* ============================================================ */
+.bp-directions {
+    display: grid;
+    grid-template-areas:
+    'ingredients'
+    'directions';
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.bp-directions__sidebar {
+    grid-area: ingredients;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bp-directions__main {
+    grid-area: directions;
+}
+
+@media (min-width: 860px) {
+    .bp-directions {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 'directions ingredients';
+        align-items: start;
+    }
+}
+
+.bp-panel {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    /*border-radius: 12px;*/
+    padding: 1.25rem 1.4rem;
+}
+
+.bp-panel__title {
+    margin: 0 0 1rem;
+    font-family: var(--bp-font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--bp-crust);
+}
+
+/* ---- ingredients list ---- */
+.bp-ingredients {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.bp-ingredients__item {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed var(--bp-border);
+}
+
+.bp-ingredients__item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.bp-ingredients__qty {
+    flex: 0 0 auto;
+    min-width: 3.5rem;
+    color: var(--bp-amber);
+    font-weight: 600;
+}
+
+.bp-ingredients__name {
+    color: var(--bp-crust);
+}
+
+/* ---- baker's tip ---- */
+.bp-tip {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--bp-tip-bg);
+    border: 1px dashed var(--bp-amber);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+}
+
+.bp-tip__icon {
+    font-size: 1.3rem;
+    flex: 0 0 auto;
+}
+
+.bp-tip__title {
+    margin: 0 0 0.2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--bp-crust);
+}
+
+.bp-tip__text {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--bp-muted);
+}
+
+/* ---- directions timeline ---- */
+.bp-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.bp-steps__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.9rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.bp-steps__item:last-child {
+    padding-bottom: 0;
+}
+
+/* connecting line between numbered markers — meaningful here since
+   directions are a genuine, order-dependent sequence */
+.bp-steps__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 32px;
+    bottom: 0;
+    width: 2px;
+    background: var(--bp-border);
+}
+
+.bp-steps__marker {
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bp-berry);
+    color: var(--bp-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.bp-steps__instruction {
+    margin: 0;
+    padding-top: 0.35rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.bp-steps__images {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+    flex-wrap: wrap;
+
+}
+
+.bp-steps__images img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ============================================================ */
+/* Responsive                                                      */
+/* ============================================================ */
+@media (max-width: 700px) {
+    .bp-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .bp-meta {
+        justify-content: space-between;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bp-actions__save,
+    .bp-actions__share {
+        transition: none;
+    }
+}

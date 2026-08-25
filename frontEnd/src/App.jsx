@@ -1,26 +1,18 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Loader } from 'lucide-react';
-import "../src/App.css"
+// App.tsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home.page';           // wherever FeaturedRecipes currently lives
+import RecipeDetailRoute from './pages/direction.page/RecipeDetail.tsx';
+import Authentication from "./pages/authentication/signup.login.tsx";
 
-import HomePage from './pages/home.page';
-import { useEffect } from 'react';
-import Header from "./components/header";
-
-const App = () => {
-
-  
+export default function App() {
     return (
-    <div >
-        
-         
-        <Routes>
-        {/* <Header/> */}
-        <Route path="/" element={<HomePage />} />
 
-        </Routes>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/recipes/:id" element={<RecipeDetailRoute />} />
+                <Route path="/login-signup" element={<Authentication />} />
 
-</div>
-  )
+            </Routes>
+
+    );
 }
-
-export default App

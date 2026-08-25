@@ -1,0 +1,248 @@
+.lf-10,
+.lf-10 *,
+.lf-10 *::before,
+.lf-10 *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.lf-10 {
+    --accent: oklch(0.449 0.135 19.514);
+    --radius: 12px;
+    font-family: Lucida Sans;
+    width: 100%;
+    min-height: 100vh;
+    background: #eef0f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lf-10__stage {
+    position: relative;
+    width: min(720px,100%);
+    min-height: 440px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px -42px rgba(16,24,60,.55);
+}
+
+.lf-10__toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.lf-10__form {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+    transition: opacity .4s;
+}
+
+.lf-10__form--login {
+    left: 0;
+    z-index: 2;
+}
+
+.lf-10__form--signup {
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.lf-10__h {
+    font-size: 23px;
+    font-weight: 700;
+    color: #161c2e;
+    margin-bottom: 4px;
+}
+
+.lf-10__form input {
+    height: 46px;
+    border: 1.5px solid #d7dbe6;
+    border-radius: var(--radius);
+    padding: 0 14px;
+    font-size: 14.5px;
+    color: #161c2e;
+    background: #fafbfe;
+    transition: border-color .18s,box-shadow .18s;
+}
+
+.lf-10__form input:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px oklch(0.58 0.19 264/.16);
+}
+
+.lf-10__form button {
+    height: 46px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    transition: filter .18s,transform .12s;
+}
+
+.lf-10__form button:hover {
+    filter: brightness(1.06);
+}
+
+.lf-10__form button:active {
+    transform: scale(.985);
+}
+
+.lf-10__form button:focus-visible {
+    outline: 3px solid oklch(0.58 0.19 264/.5);
+    outline-offset: 2px;
+}
+
+.lf-10__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 3;
+    overflow: hidden;
+    background: linear-gradient(135deg, oklch(0.657 0.207 22.8), oklch(0.44 0.137 24.792));
+    color: #fff;
+    transition: transform .5s cubic-bezier(.4,0,.2,1);
+    border-radius: 120px 20px 20px 120px;
+}
+
+.lf-10__panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 40px;
+    transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+
+.lf-10__panel h3 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.lf-10__panel p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e7e2ff;
+    max-width: 240px;
+}
+
+.lf-10__panel--b {
+    transform: translateX(100%);
+}
+
+.lf-10__ghost {
+    margin-top: 6px;
+    padding: 11px 30px;
+    border: 1.5px solid #fff;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background .18s,color .18s;
+}
+
+.lf-10__ghost:hover {
+    background: #fff;
+    color: var(--accent);
+}
+
+.lf-10__toggle:focus-visible ~ .lf-10__overlay {
+    outline: 3px solid #fff;
+    outline-offset: -4px;
+}
+
+.lf-10__toggle:checked ~ .lf-10__overlay {
+    transform: translateX(-100%);
+    border-radius: 20px 120px 120px 20px;
+}
+
+.lf-10__toggle:checked ~ .lf-10__overlay .lf-10__panel--a {
+    transform: translateX(-100%);
+}
+
+.lf-10__toggle:checked ~ .lf-10__overlay .lf-10__panel--b {
+    transform: translateX(0);
+}
+
+.lf-10__toggle:checked ~ .lf-10__form--login {
+    opacity: 0;
+    z-index: 1;
+}
+
+.lf-10__toggle:checked ~ .lf-10__form--signup {
+    opacity: 1;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .lf-10__stage {
+        min-height: 520px;
+    }
+
+    .lf-10__form {
+        width: 100%;
+        padding: 40px 28px 130px;
+    }
+
+    .lf-10__overlay {
+        width: 100%;
+        height: 130px;
+        top: auto;
+        bottom: 0;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .lf-10__panel p {
+        display: none;
+    }
+
+    .lf-10__toggle:checked ~ .lf-10__overlay {
+        transform: translateY(0);
+    }
+
+    .lf-10__panel--b {
+        transform: translateY(100%);
+    }
+
+    .lf-10__toggle:checked ~ .lf-10__overlay .lf-10__panel--a {
+        transform: translateY(-100%);
+    }
+
+    .lf-10__toggle:checked ~ .lf-10__overlay .lf-10__panel--b {
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lf-10__overlay,
+    .lf-10__panel,
+    .lf-10__form {
+        transition: opacity .2s;
+    }
+}

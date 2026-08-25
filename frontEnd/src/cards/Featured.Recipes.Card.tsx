@@ -1,4 +1,5 @@
-import type { Recipe } from '../types/recipe';
+import { Link } from 'react-router-dom';
+import type { Recipe } from '../utils/types/recipes';
 import './styles/featuredCard.css';
 
 interface RecipeCardProps {
@@ -15,7 +16,7 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
     } = recipe;
 
     return (
-        <a className="bp-card" href={`/recipes/${id}`}>
+        <Link className="bp-card" to={`/recipes/${id}`}>
             <div className="bp-card__image-wrap">
 
                 {imageUrl ? (
@@ -24,6 +25,8 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
                         src={imageUrl}
                         alt={title}
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="high"
                     />
                 ) : (
                     <div
@@ -53,6 +56,6 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
                 )}
 
             </div>
-        </a>
+        </Link>
     );
 }
