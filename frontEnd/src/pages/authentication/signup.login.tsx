@@ -35,7 +35,7 @@ const Authentication: React.FC = () => {
                     <h2 className="lf-10__h">Create account</h2>
                     <input
                         type="text"
-                        placeholder="Full name"
+                        placeholder="username"
                         autoComplete="name"
                         required
                     />

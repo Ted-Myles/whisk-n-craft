@@ -1,49 +1,82 @@
-.categories-icons{
+.categories-icons {
     display: flex;
-    align-items: center;
-width: 100%;
-height: 10%;
-background-color: rgba(243, 202, 180, 0.594);
-border-radius: 10px;
-margin: 0.01%;
-}
-.cat-icons{
-     display: flex;
-    justify-content: center;
-    margin: 0.5%;
-    width: 5%;
-    height: 20%;
-    font-family: Apple Chancery, cursive;
-    color: #A52A2A;
-
-    
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-  padding: 0.5em 1.5em;
-  
-  cursor: pointer;
-  transition: 0.1s;
-    
-}
-
-.cat-icons{
+    /*align-items: center;*/
+    width: 100%;
     height: 30%;
-    width: 8%;
-    
+    background-color: rgb(241 235 221);
+    margin: 0.01%;
+    opacity: 0.9;
 }
-.cat-icons:hover{
+
+.cat-icons {
+    flex: 0 0 auto;
+    width: 16%;
+    height: 75%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    background: var(--bp-white);
+    margin: 1%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.icons-title {
+    font-size: large;
+    margin-top: 12%;
+    margin-left: 5%;
+    text-decoration: underline;
+    text-decoration-color: #b06bf4;
+
+}
+
+.cat-icons:hover {
     color: rgba(244, 69, 38, 0.619);
 }
 
-.bake2{
-  width: 45px;
-  height: 55px;
-  object-fit: contain;
-  color: #4ff54f96;
-  background-color: #ece4c4;
-  border-radius: 75%;
-   box-shadow: 2px 4px 10px rgba(250, 116, 79, 0.678);
+.image-icon {
+    width: 90%;
+    height: 65%;
+    align-self: center;
+    margin-top: 10%;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 500px) {
+
+    .categories-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        height: fit-content;
+        /*height: fit-content;*/
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .cat-icons {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .image-icon {
+        width: 80%;
+        height: 90%;
+
+        margin: 10px auto 0;
+    }
+
+    .icons-title {
+        font-size: 16px;
+        margin-top: 15px;
+        /*text-align: center;*/
+    }
 }

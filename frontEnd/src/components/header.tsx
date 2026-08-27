@@ -3,12 +3,14 @@ import Navbar from '../components/navbar';
 import "../components/styles/header.css";
 
 import { RemoveScroll } from 'react-remove-scroll';
+import React from "react";
 
 const Header = () => {
   return (
    
     <div className="header">
-        <Navbar/>
+        <Banner />
+        {/*<Navbar/>*/}
         
     </div>
    

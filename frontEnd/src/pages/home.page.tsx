@@ -6,13 +6,16 @@ import "../pages/styles/homepage.css";
 import Banner from "../components/banner";
 import BrowseCategoriesIcons from "../components/browse-categoriesIcons";
 import FeaturedRecipes from "../components/featuredContainer";
+import Navbar from "../components/navbar";
 
 const HomePage = () => {
   return (
     <div className="homepage-container">
       <Header />
+        <Navbar />
+
       <div className="homepage-body">
-        <Banner />
+        {/*<Banner />*/}
 
         <FeaturedRecipes />
           <BrowseCategories />
