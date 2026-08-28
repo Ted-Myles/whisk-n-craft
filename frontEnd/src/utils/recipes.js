@@ -1,4 +1,4 @@
-import apiClient from './client.js';
+import apiClient from './api/client.ts';
 
 // Public reads only — this frontend never creates, edits, or deletes
 // recipes. All of that lives in the separate admin dashboard.
