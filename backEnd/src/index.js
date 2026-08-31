@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import supabase, { checkDatabaseConnection } from './config/supabase.js';
 import recipesRoutes from './routes/recipes.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import categoriesRoutes from './routes/categories.routes.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 // mount routers
 app.use('/api/recipes', recipesRoutes);   // <-- this line was missing before, causing "Cannot GET"
 app.use('/api/auth', authRoutes);
+app.use('/api/categories', categoriesRoutes);
 
 // centralized error handler — must be defined AFTER all routes
 app.use((err, req, res, next) => {

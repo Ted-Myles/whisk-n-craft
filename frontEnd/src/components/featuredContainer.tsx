@@ -42,9 +42,15 @@ export default function FeaturedRecipes({ viewAllHref = '/recipes' }: FeaturedRe
                     ))}
             </div>
 
-            <a className="bp-featured__more" href={viewAllHref}>
-                More
-            </a>
+
+            <button className="custom-learn-more-btn"  href={viewAllHref}>
+                <span className="button-text">Learn More</span>
+                <div className="circle"></div>
+                <div className="arrow"></div>
+            </button>
+            {/*<a className="bp-featured__more" href={viewAllHref}>*/}
+            {/*    More*/}
+            {/*</a>*/}
         </section>
     );
 }

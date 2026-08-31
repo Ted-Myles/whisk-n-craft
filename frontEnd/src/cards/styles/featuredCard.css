@@ -1,14 +1,14 @@
 .bp-card {
     flex: 0 0 auto;
     width: clamp(130px, 15vw, 220px);
-    height: 270px;
+    height: 330px;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     background: var(--bp-white);
     border: 1px solid var(--bp-border);
     border-top: 4px solid var(--bp-amber);
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     overflow: hidden;
     text-decoration: none;
     color: inherit;

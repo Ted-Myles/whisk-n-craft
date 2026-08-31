@@ -1,0 +1,23 @@
+.bp-category-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 3vw, 1.75rem);
+}
+
+.bp-category-page__title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.bp-category-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.bp-category-page__message {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #8b7355;
+}
