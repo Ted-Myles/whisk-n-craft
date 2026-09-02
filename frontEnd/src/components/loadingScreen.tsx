@@ -4,15 +4,7 @@ import './styles/loading.css';
 const Loading = () => {
     return (
         <div className="loading-screen">
-            {/*<div className="loading-logo-wrapper">*/}
-            {/*    <img*/}
-            {/*        src={Logo}*/}
-            {/*        alt="Loading"*/}
-            {/*        className="loading-logo"*/}
-            {/*    />*/}
-            {/*</div>*/}
-
-            <div className="loading-spinner" />
+        <div className="loading-spinner" />
         </div>
     );
 };
