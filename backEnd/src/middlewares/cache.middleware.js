@@ -22,14 +22,9 @@ export function etagCache(options = {}) {
 
     return (req, res, next) => {
 
-        /*
-         * Keep the original Express res.json().
-         */
+        
         const originalJson = res.json.bind(res);
 
-        /*
-         * Replace res.json() with our own implementation.
-         */
         res.json = (body) => {
 
             try {

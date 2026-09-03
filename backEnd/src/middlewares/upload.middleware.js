@@ -12,8 +12,7 @@ export const uploadRecipeMedia = multerInstance.fields([
 ]);
 
 // Used on POST /api/recipes/:id/images — adding a single photo after the
-// recipe already exists (separate field name so it doesn't collide with
-// the above)
+
 export const uploadSingleImage = multerInstance.fields([
     { name: 'image', maxCount: 1 },
 ]);
