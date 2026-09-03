@@ -3,7 +3,7 @@
     --bp-crust: #3b2a1e;
     --bp-amber: #c97a2b;
     --bp-berry: #a23b4e;
-    --bp-white: #f4f4f4;
+    --bp-white: #ffffff;
     --bp-muted: #8b7355;
     --bp-border: #eadfc8;
     --bp-tip-bg: #f3e9d8;
@@ -14,11 +14,11 @@
 
 .bp-recipe {
     max-width: 1100px;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
     padding: clamp(1rem, 3vw, 2rem);
     font-family: var(--bp-font-body);
-    color: var(--bp-crust);
-    margin-top: 100px;
+    /*color: var(--bp-crust);*/
+    /*margin-top: 100px;*/
     background-color: white;
 }
 
@@ -366,8 +366,8 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--bp-berry);
-    color: var(--bp-white);
+    background: black;
+    color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
